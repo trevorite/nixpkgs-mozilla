@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, buildFHSUserEnv, makeWrapper, dpkg, alsaLib
+{ stdenv, lib, fetchurl, buildFHSUserEnv, makeWrapper, dpkg, alsaLib
 , alsaUtils, alsaOss, alsaTools, alsaPlugins, libGL, utillinux, mesa_glu, qt4
 , zlib, patchelf, xorg, libpulseaudio
 , callPackage

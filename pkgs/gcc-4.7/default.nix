@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, noSysDirs
+{ stdenv, lib, fetchurl, noSysDirs
 , langC ? true, langCC ? true, langFortran ? false
 , langJava ? false
 , langAda ? false

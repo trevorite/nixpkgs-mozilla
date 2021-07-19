@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, autoconf
+{ stdenv, lib, fetchFromGitHub, autoconf
 , zlib
 , python
 , perl

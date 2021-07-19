@@ -3,7 +3,7 @@
 ### It is used when the version of cbindgen in
 ### upstream nixpkgs is not up-to-date enough to compile Firefox.
 
-{ stdenv, fetchFromGitHub, rustPlatform
+{ stdenv, lib, fetchFromGitHub, rustPlatform
 # , Security
 }:
 

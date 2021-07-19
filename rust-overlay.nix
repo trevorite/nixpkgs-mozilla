@@ -253,7 +253,7 @@ let
   #                       All extensions in this list will be installed for the target architectures.
   #                       *Attention* If you want to install an extension like rust-src, that has no fixed architecture (arch *),
   #                       you will need to specify this extension in the extensions options or it will not be installed!
-  fromManifestFile = manifest: { stdenv, fetchurl, patchelf }:
+  fromManifestFile = manifest: { stdenv, lib, fetchurl, patchelf }:
     let
       inherit (builtins) elemAt;
       inherit (super) makeOverridable;
@@ -298,9 +298,9 @@ let
       ) { extensions = []; targets = []; targetExtensions = []; }
     );
 
-  fromManifest = sha256: manifest: { stdenv, fetchurl, patchelf }:
+  fromManifest = sha256: manifest: { stdenv, lib, fetchurl, patchelf }:
     let manifestFile = if sha256 == null then builtins.fetchurl manifest else fetchurl { url = manifest; inherit sha256; };
-    in fromManifestFile manifestFile { inherit stdenv fetchurl patchelf; };
+    in fromManifestFile manifestFile { inherit stdenv lib fetchurl patchelf; };
 
 in
 
