@@ -314,7 +314,7 @@ rec {
 
   rustChannelOf = { sha256 ? null, ... } @ manifest_args: fromManifest
     sha256 (manifest_v2_url manifest_args)
-    { inherit (self) stdenv fetchurl patchelf; }
+    { inherit (self) stdenv lib fetchurl patchelf; }
     ;
 
   # Set of packages which are automagically updated. Do not rely on these for
